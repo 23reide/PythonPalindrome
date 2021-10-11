@@ -4,30 +4,18 @@ import math
 numbers = []
 found = []
 
-
 def findPalindromes(length):
     i = 0
     while(i < len(numbers)-length):
-        halfLength = math.floor(length/2)
-
-        left = []
-        j = i
-        while(j-i < halfLength):
-            left.append(numbers[j])
+        j=0
+        while(numbers[i+j] == numbers[(i+length-1)-j]):
             j += 1
-
-        right = []
-        j = length + i - 1
-        while(j > length + i - 1 - halfLength):
-            right.append(numbers[j])
-            j -= 1
-
-        if(left == right):
-            j = i
-            while(j-i < length):
-                found.append(numbers[j])
-                j += 1
-
+            if(j >= length//2):
+                k=0
+                while(k < length):
+                    found.append(numbers[k+i])
+                    k += 1
+                i += 1
         i += 1
     print(found)
 
@@ -37,6 +25,6 @@ def createRand(length, upBound):
         numbers.append(r.randint(0, upBound))
         i += 1
     print(numbers)
-    findPalindromes(3)
+    findPalindromes(2)
 
 createRand(100, 20)

@@ -4,7 +4,6 @@ import math
 numbers = []
 found = []
 
-
 def findPalindromes(length):
     i = 0
     while(i < len(numbers)-length):
@@ -36,7 +35,7 @@ def createRand(length, upBound):
     while(i<length):
         numbers.append(r.randint(0, upBound))
         i += 1
-    print(numbers)
+    print("hahahahahahahahahahah")
     findPalindromes(3)
 
 createRand(100, 20)
